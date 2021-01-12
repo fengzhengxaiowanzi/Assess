@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="public/dist/css/zui.min.css"/>
+</head>
+<body>
+<br>
+<br>
+
+
+<div class="container" style="width: 600px;margin: 30px auto">
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align: center;">
+            用户注册
+        </div>
+        <div class="panel-body">
+            <div class="input-group with-padding">
+                <span class="input-group-addon">用户名</span>
+                <input type="text" class="form-control" id="account" placeholder="请输入用户名">
+            </div>
+            <div class="input-group with-padding">
+                <span class="input-group-addon">密码</span>
+                <input type="password" class="form-control" id="pass" placeholder="请输入密码">
+            </div>
+
+            <div class="input-group with-padding">
+                <span class="input-group-addon"> 确认密码</span>
+                <input type="password" class="form-control" id="rpass" placeholder="请输入密码">
+            </div>
+            <div class="input-group with-padding">
+                <span class="input-group-addon"> 性别</span>
+                <select id="sex" class="form-control">
+                    <option value="1">男</option>
+                    <option value="0">女</option>
+                </select>
+            </div>
+            <div class="input-group with-padding">
+                <span class="input-group-addon"> 姓名</span>
+                <input type="text" class="form-control" id="name" placeholder="请输入姓名">
+            </div>
+            <div class="input-group with-padding">
+                <span class="input-group-addon">地址</span>
+                <input type="text" class="form-control" id="address" placeholder="请输入地址">
+            </div>
+
+
+            <div class="input-group with-padding">
+                <span class="input-group-addon">手机号码</span>
+                <input type="text" class="form-control" id="phone" placeholder="请输入手机号码">
+            </div>
+
+            <div class="input-group with-padding">
+                <span class="input-group-addon">邮箱</span>
+                <input type="email" class="form-control" id="email" placeholder="请输入邮箱">
+            </div>
+            <div class="input-group with-padding">
+                <span class="input-group-addon">生日</span>
+                <input type="date" class="form-control" id="birth" placeholder="请选择生日">
+            </div>
+            <div class=" with-padding">
+                <button class="btn btn-block  btn btn-primary" onclick="reg()" type="button">注册</button>
+            </div>
+            <div class=" with-padding">
+                <button class="btn btn-block btn btn-primary" onclick="back()" type="button">返回</button>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+</body>
+
+
+<script type="text/javascript" src="public/dist/lib/jquery/jquery.js"></script>
+<!-- ZUI 标准版压缩后的 JavaScript 文件 -->
+<script type="text/javascript" src="public/dist/js/zui.min.js"></script>
+<script type="text/javascript" src="public/layer-v3.1.1/layer/layer.js"></script>
+<script src="public/js/jsencrypt.js"></script>
+<script src="public/js/userReg.js"></script>
+
+</html>

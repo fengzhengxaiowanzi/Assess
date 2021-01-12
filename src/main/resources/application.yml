@@ -1,0 +1,22 @@
+server:
+  port: 10081
+spring:
+  mvc:
+    static-path-pattern: /public/**
+    view:
+      prefix: /public/html/
+      suffix: .html
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.92.217.177:3306/D_TEST?useUnicode=yes&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+#    url: jdbc:mysql://127.0.0.1:3306/D_TEST?useUnicode=yes&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: Zxj-489876=
+#  mvc:
+#    static-path-pattern: /pubic/**
+#    view:
+#      suffix: .html
+#      prefix: /public/html/
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

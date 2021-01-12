@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>登录</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="public/css/util.css">
+    <link rel="stylesheet" type="text/css" href="public/css/userLogin.css">
+</head>
+
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-form-title" style="background-image: url(public/images/bg-01.jpg);">
+                    <span class="login100-form-title-1">用 户 登 录</span>
+                </div>
+
+                <form class="login100-form validate-form">
+                    <div class="wrap-input100 validate-input m-b-26">
+                        <span class="label-input100">用户名</span>
+                        <input id="name" class="input100" type="text"  placeholder="请输入用户名">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-26">
+                        <span class="label-input100">密码</span>
+                        <input id="pass" class="input100" type="password"  placeholder="请输入用户名">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <div><button type="button" class="login100-form-btn" onclick="doLogin()">登 录</button></div>
+                        <div><button type="button" style="margin-left: 20px" class="login100-form-btn" onclick="toReg()">注册</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="public/dist/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="public/dist/js/zui.min.js"></script>
+    <script type="text/javascript" src="public/layer-v3.1.1/layer/layer.js"></script>
+    <script src="public/js/jsencrypt.js"></script>
+    <script src="public/js/userLogin.js"></script>
+</body>
+
+</html>

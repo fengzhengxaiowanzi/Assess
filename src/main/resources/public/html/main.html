@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>后台</title>
+    <link rel="stylesheet" href="public/layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">后台管理</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    <span id="login-user"></span>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a onclick="changePage('userMan')">基本资料</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a style="cursor: pointer" onclick="loginOut()">退出</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">信息管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a onclick="changePage('userMan')"style="cursor: pointer">个人信息管理</a></dd>
+                        <dd><a onclick="changePage('frontUserMan')" style="cursor: pointer">全部用户管理</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="layui-body" style="background-color: #F2F2F2">
+        <iframe id="main-content" src="" style="width: 100%;height: 100%;"></iframe>
+    </div>
+
+    <div class="layui-footer" style="background-color: 	#808080">
+        <!-- 底部固定区域 -->
+        ©
+    </div>
+</div>
+<script type="text/javascript" src="public/dist/lib/jquery/jquery.js"></script>
+<script src="public/layui/layui.js"></script>
+<script src="public/js/main.js"></script>
+
+</body>
+</html>
