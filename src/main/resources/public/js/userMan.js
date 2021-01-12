@@ -152,6 +152,12 @@ function modOk() {
         layer.alert('邮箱格式不正确');
         return;
     }
+    let date = new Date();
+    let nowDate = date.getFullYear()+'-'+((date.getMonth()+1) <= 9 ? '0'+(date.getMonth()+1):date.getMonth())+'-'+(date.getDate() <= 9 ? '0'+ date.getDate():date.getDate());
+    if(new Date(birth) - new Date(nowDate)> 0){
+        layer.alert('出生年月不能早于今天');
+        return;
+    }
     let user = {userName:name,userAccount: account,userSex:sex,userEmail: email,userPhone: phone,userAddress: address,userBirth: birth}
     $.ajax({
         url: 'userInfoMod.do',
@@ -216,3 +222,4 @@ function rsaEncode(str,key) {
     return pass;
 }
 getUser();
+

@@ -88,7 +88,7 @@ function refTable(pageData) {
 }
 
 function reset(ids) {
-    layer.confirm("确定重置密码为123456？", {
+    layer.confirm("确定重置密码为123456吗？", {
         btn: ['确定','取消'] //按钮
     }, function () {
         layer.load(2);
