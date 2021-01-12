@@ -7,6 +7,11 @@ function doLogin() {
     }
     getPublicKey(name,pass);
 }
+$(document).keydown(function(event){
+    if(event.keyCode == 13){
+        doLogin();
+    }
+});
 function login(name,rsaPass) {
     $.ajax({
         url:'userLogin.do',
