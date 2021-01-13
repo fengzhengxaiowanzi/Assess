@@ -65,7 +65,7 @@ function saveModPass() {
         return;
     }
     const accountCheck = /^[a-zA-Z\d]+$/
-    if(!accountCheck.test(newPass) || pass.length > 20 ||newPass.length <6){
+    if(!accountCheck.test(newPass) || newPass.length > 20 ||newPass.length <6){
         layer.alert('用户密码只能为6-20位数字字母组合');
         return;
     }
