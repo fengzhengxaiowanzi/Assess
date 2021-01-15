@@ -1,4 +1,4 @@
-package com;
+package com.zhang.main;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
  * @Description: PACKAGE_NAME
  * @Date：Created in 13:47 2021/1/6
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.zhang")
 @MapperScan("com.zhang.mapper")
 @PropertySource(value = "classpath:config.properties")
 public class Application {
