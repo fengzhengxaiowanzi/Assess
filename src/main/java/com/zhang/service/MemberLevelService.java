@@ -1,5 +1,8 @@
 package com.zhang.service;
 
+import com.zhang.api.user.ipo.ParamAddMemberLevel;
+import com.zhang.api.user.ipo.ParamModMemberLevel;
+import com.zhang.api.user.opo.RetMemberLevelObj;
 import com.zhang.common.ReturnValue;
 import com.zhang.common.ServiceResult;
 import com.zhang.pojo.BMemberLevel;
@@ -16,14 +19,14 @@ public interface MemberLevelService {
      * 获取全部的会员等级规则
      * @return 集合
      */
-    ServiceResult<List<BMemberLevel>> getMemberLevel();
+    ServiceResult<List<RetMemberLevelObj>> getMemberLevel();
 
     /**
      * 新增会员等级规则
-     * @param bMemberLevel 新增参数
+     * @param param 新增参数
      * @return 等级规则ID
      */
-    ServiceResult<BMemberLevel> addMemberLevel(BMemberLevel bMemberLevel);
+    ServiceResult<BMemberLevel> addMemberLevel(ParamAddMemberLevel param);
     /**
      * 删除会员的等级规则
      * @param levelId 等级规则ID
@@ -33,8 +36,8 @@ public interface MemberLevelService {
 
     /**
      * 修改会员等级规则
-     * @param bMemberLevel 修改的等级规则
+     * @param param 修改的等级规则
      * @return 结果
      */
-    ReturnValue updateMemberLevel(BMemberLevel bMemberLevel);
+    ReturnValue updateMemberLevel(ParamModMemberLevel param);
 }

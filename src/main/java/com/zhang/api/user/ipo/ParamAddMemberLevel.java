@@ -8,7 +8,7 @@ import lombok.Data;
  * @Date：Created in 13:10 2021/2/8
  */
 @Data
-public class ParamAddMember {
+public class ParamAddMemberLevel {
     /**
      * 等级名称
      */
