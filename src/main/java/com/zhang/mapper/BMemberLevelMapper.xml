@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.mapper.BMemberLevelMapper">
+    <resultMap id="BaseResultMap" type="com.zhang.pojo.BMemberLevel">
+        <result column="level_id" jdbcType="INTEGER" property="levelId" />
+        <result column="level_name" jdbcType="VARCHAR" property="levelName" />
+        <result column="point_max" jdbcType="INTEGER" property="pointMax" />
+        <result column="point_min" jdbcType="INTEGER" property="pointMin" />
+        <result column="level_distcount" jdbcType="INTEGER" property="levelDistCount" />
+        <result column="level_text" jdbcType="VARCHAR" property="levelText" />
+        <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+        <result column="last_modify" jdbcType="TIMESTAMP" property="lastModify" />
+        <result column="status" jdbcType="INTEGER" property="status" />
+    </resultMap>
+    <!-- 查询等级规则 -->
+    <select id="selectAllLevel" resultMap="BaseResultMap">
+        select * from b_member_level where status > 0
+    </select>
+    <!-- 新增等级 -->
+    <insert id="insertLevel" parameterType="com.zhang.pojo.BMemberLevel">
+        <selectKey keyProperty="levelId" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into b_member_level
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="levelName != null">
+                level_name,
+            </if>
+            <if test="pointMax != null">
+                point_max,
+            </if>
+            <if test="pointMin != null">
+                point_min,
+            </if>
+            <if test="levelDistCount != null">
+                level_distcount,
+            </if>
+            <if test="levelText != null">
+                level_text,
+            </if>
+            <if test="insertTime != null">
+                insert_time,
+            </if>
+            <if test="lastModify != null">
+                last_modify,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="levelName != null">
+                #{levelName,jdbcType=VARCHAR},
+            </if>
+            <if test="pointMax != null">
+                #{pointMax,jdbcType=INTEGER},
+            </if>
+            <if test="pointMin != null">
+                #{pointMin,jdbcType=INTEGER},
+            </if>
+            <if test="levelDistCount != null">
+                #{levelDistCount,jdbcType=INTEGER},
+            </if>
+            <if test="levelText != null">
+                #{levelText,jdbcType=VARCHAR},
+            </if>
+            <if test="insertTime != null">
+                #{insertTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="lastModify != null">
+                #{lastModify,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <!--通过主键修改数据-->
+    <update id="updateLevel">
+        update b_member_level
+        <set>
+            <if test="levelName != null">
+                level_name = #{levelName},
+            </if>
+            <if test="pointMax != null">
+                point_max = #{pointMax},
+            </if>
+            <if test="pointMin != null">
+                point_min = #{pointMin},
+            </if>
+            <if test="levelDistCount != null">
+                level_distcount = #{levelDistCount},
+            </if>
+            <if test="levelText != null">
+               level_text = #{levelText},
+            </if>
+            <if test="insertTime != null">
+                insert_time = #{insertTime},
+            </if>
+            <if test="lastModify != null">
+                last_modify = #{lastModify},
+            </if>
+            <if test="status != null">
+               status = #{status},
+            </if>
+        </set>
+        where level_id = #{levelId}
+    </update>
+
+</mapper>
