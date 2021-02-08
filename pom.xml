@@ -87,6 +87,7 @@
       <version>2.3.5.RELEASE</version>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
 
   <build>

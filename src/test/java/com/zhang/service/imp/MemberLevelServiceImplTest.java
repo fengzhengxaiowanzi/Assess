@@ -1,26 +1,19 @@
 package com.zhang.service.imp;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.JSONPObject;
 import com.zhang.common.ServiceResult;
-import com.zhang.dto.JsonMessage;
 import com.zhang.pojo.BMemberLevel;
 import com.zhang.service.MemberLevelService;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.jackson.JsonObjectDeserializer;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
-import javax.swing.plaf.basic.BasicMenuBarUI;
-
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
-import static org.junit.Assert.*;
 
 /**
  * @Author: zhang
@@ -62,7 +55,15 @@ public class MemberLevelServiceImplTest {
         bMemberLevel.setLevelText("删除");
         bMemberLevel.setLevelDistCount(102);
         bMemberLevel.setLevelName("删除信息");
-        bMemberLevel.setLevelId(4);
+        bMemberLevel.setLevelId(6);
         System.err.println(JSON.toJSONString(memberLevelService.updateMemberLevel(bMemberLevel)));
+    }
+    @Test
+    public void print(){
+        Integer [] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        List<Integer> lists = Arrays.asList(a) ;
+        List<Integer> newStr =
+                lists.stream().filter(p -> p > 5).collect(Collectors.toList());
+        newStr.stream().forEach(System.out::println);
     }
 }

@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +27,7 @@ public class BMemberLevelDao {
         try {
             List<BMemberLevel> lists = new ArrayList<>();
             lists = memberLevelMapper.selectAllLevel();
-             return new ServiceResult<List<BMemberLevel>>(DictCode.SUCCESS,"查询成功").setResult(lists);
+             return new ServiceResult<List<BMemberLevel>>(DictCode.SUCCESS,"成功").setResult(lists);
         }catch (DataAccessException e){
             return new ServiceResult<>(DictCode.SQL_EXCEPTION,"查询异常");
         }
